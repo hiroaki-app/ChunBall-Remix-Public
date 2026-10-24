@@ -1,0 +1,16 @@
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+import {build} from 'esbuild';
+const b=await build({stdin:{contents:['world','freeBelt','beltGearContact','save'].map(m=>`export * from './src/${m}';`).join(''),resolveDir:process.cwd()},bundle:true,write:false,format:'cjs',platform:'node'});
+const c={module:{exports:{}}};vm.runInNewContext(b.outputFiles[0].text,c);const a=c.module.exports;
+const setup=()=>{const w=a.createStage('free');w.gears=[];w.belts=[];w.segments=[];w.freeBelts=[];a.addFreeBelt(w,[{x:300,y:350},{x:1000,y:350},{x:1000,y:600},{x:300,y:600}]);return w;};
+const motor={x:650,y:317.25,r:28,motorKind:'motor'};
+assert.equal(a.gearPlacementAllowed(setup(),motor),true);
+for(const point of [{x:650,y:317.5001},{x:650,y:318},{x:650,y:350},{x:300,y:317.25},{x:301,y:317.25}])assert.equal(a.gearPlacementAllowed(setup(),{...motor,...point}),false,'penetration/endpoint must remain forbidden');
+assert.equal(a.gearPlacementAllowed(setup(),{...motor,motorFrictionContact:false,frictionContact:true}),false,'old edited motor not upgraded');
+assert.equal(a.gearPlacementAllowed(setup(),{...motor,frictionContact:false}),false);
+assert.equal(a.gearPlacementAllowed(setup(),{...motor,y:383}),true,'inner roller clearance unchanged');
+const two=setup();a.addFreeBelt(two,[{x:300,y:100},{x:1000,y:100},{x:1000,y:284.5},{x:300,y:284.5}]);assert.equal(a.gearPlacementAllowed(two,motor),false,'two external faces ambiguous');
+const intrusion=setup();a.addFreeBelt(intrusion,[{x:600,y:100},{x:900,y:100},{x:900,y:307.25},{x:600,y:307.25}]);assert.equal(a.gearPlacementAllowed(intrusion,motor),false,'contact with one loop never licenses crossing another');
+const restored=a.loadSaveGame(a.parseSaveGame(a.captureSaveGame(setup())));assert.equal(a.gearPlacementAllowed(restored,motor),true);
+console.log('PASS deep penetration, inside band, endpoints, multiple faces, another-loop intrusion, legacy motor and save geometry');

@@ -20,6 +20,8 @@
 - `pwa.ts` / `scripts/pwa.mjs` / `public/_headers` / Vite設定: 別名・別キャッシュ・単一入口に整理。
 - `contactCompatibility.ts`: 承認済みの互換反発領域を保持。機械の生成・描画・搬送とは無関係。
 
+2026-10-26の追加点検で、維持したトラックの `TRUCK_SHAPE` は元版と同じ全19項目であることを確認しました。元版のファイル冒頭にはSaito KD-ZSを参考にした旨のコメントがあります。コンバインステージの除外は、この共有トラック形状の除外を意味しません。制作者は現行デザインの保持を確定しました。来歴と実機比較・権利確認の限界はPUBLICATION_AUDIT.mdを参照してください。
+
 共通物理の `spin.ts`、`freeBelt.ts`、`beltContact.ts`、`beltGearContact.ts`、
 `gearContact.ts`、`crawlerSweep.ts` は元版とバイト単位で同一です。
 分離のために変更した一部ファイルは構文変換時の書式差分も含みます。

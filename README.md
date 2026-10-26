@@ -6,9 +6,10 @@
 - [本家ChunBall](https://chunball.pages.dev/)
 - [Grok版ChunBall](https://chunball.grok.me/)
 
-このリポジトリは、コンバイン専用部分を除いた4ステージ版です。上記サイトとこのソースの内容・バージョンが常に一致するとは限りません。
+このリポジトリは、コンバインステージを含まない4ステージ版です。本家Cloudflare版とRemix版は別管理で、上記サイトとこのソースの内容・バージョンが常に一致するとは限りません。
 
-> 公開準備中：[LICENSE](LICENSE) はMITライセンスで、著作権表示は `Copyright (c) 2026 hiroaki-app` です。Grok版の「利用について」には旧方針が残っており、公開前に更新が必要です。
+[LICENSE](LICENSE) はMITライセンスです。著作権表示は `Copyright (c) 2026 hiroaki-app` です。
+Grok版のMITへの変更と旧「利用について」の削除はプレビューで完了したとの所有者確認があり、本番への反映はまだ行われていません（2026-10-26時点）。
 
 ## 4つのステージ
 

@@ -81,4 +81,4 @@ npm test
 分離時の検証記録は [TEST_RESULTS.md](TEST_RESULTS.md)、技術的な差分は [SEPARATION.md](SEPARATION.md) を参照してください。
 これらの記録は、現在のGrok配信版や全端末の動作確認を意味しません。
 第三者の権利表示は [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) を参照してください。
-Git履歴の匿名化・依存脆弱性へのローカル対処と、リモート反映前・権利確認の残課題は [PUBLICATION_AUDIT.md](PUBLICATION_AUDIT.md) に記録しています。
+Git履歴の匿名化・依存脆弱性への対処、新しいPrivateリポジトリへの移行方針と公開前・権利確認の残課題は [PUBLICATION_AUDIT.md](PUBLICATION_AUDIT.md) に記録しています。

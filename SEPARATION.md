@@ -4,7 +4,8 @@
 
 元版HEAD: `b2f00f121d7aac8c6a47cfd73a6164de9d2ddde9`。
 元版のコード、Git履歴、Cloudflare設定、ブラウザ保存データは変更していません。
-分離時にはGit履歴やremoteをコピーしていません。元版と独立した新規Privateリポジトリとして管理し、Grok接続・一般公開は別途承認後に行います。
+最初の分離時には元版のGit履歴やremoteをコピーしていません。その後、匿名化済み履歴だけを新しいPrivateの `hiroaki-app/ChunBall-Remix-Public` へ移行する方針としました。
+既存Privateの `hiroaki-app/ChunBall-Remix` と非公開バックアップは保持し、旧履歴の上書きや公開はしません。Public変更・Grok接続・本番公開は別途承認が必要です。
 
 ## 主な差分
 

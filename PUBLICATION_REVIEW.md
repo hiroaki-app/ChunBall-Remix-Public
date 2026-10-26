@@ -12,7 +12,7 @@
 
 ## 残る確認事項
 
-最終点検で見つかった項目、ローカルでの匿名化・脆弱性修正、公開可否の区分は [PUBLICATION_AUDIT.md](PUBLICATION_AUDIT.md) を参照してください。リモートは旧履歴のままPrivateを維持しています。
+最終点検で見つかった項目、匿名化・脆弱性修正、新しいPrivateの `hiroaki-app/ChunBall-Remix-Public` への移行方針は [PUBLICATION_AUDIT.md](PUBLICATION_AUDIT.md) を参照してください。既存Privateとバックアップは保持し、旧リモート履歴は置き換えません。新Privateも公開承認までPrivateを維持します。
 
 1. 所有者が許諾権限を持つ範囲、共同制作者・寄稿者・素材・生成AIの制作来歴を確認する。
 2. THIRD_PARTY_NOTICES.mdとthird-party-licenses/を保持する。MITへの変更で第三者の別ライセンスやNOTICEを消さない。
@@ -40,4 +40,4 @@ MIT本文に独自の追加条件や草案注記は挿入していません。�
 - MIT方針の文書チェック: 成功。LICENSE本文に独自の制限・追加条件なし。
 - third-party-licenses/の13ファイルは変更前後のSHA-256が一致し、権利表示を保持。
 - src/、scripts/、public/、依存・Vite設定に差分なし。
-- 上記はMIT文書更新時の検証記録です。その後のローカル履歴整理・依存修正の操作と検証はPUBLICATION_AUDIT.mdに記録しています。push/PR/Public変更・Grok本番編集は未実施です。
+- 上記はMIT文書更新時の検証記録です。その後の履歴整理・依存修正・新Privateへの移行はPUBLICATION_AUDIT.mdと移行完了報告で区別して記録しています。旧履歴のforce-push・Public変更・Grok本番編集は行いません。
